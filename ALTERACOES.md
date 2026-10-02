@@ -80,3 +80,9 @@ Esta apresentação usa um novo repositório e um projeto separado na Vercel. O 
 ## Ajuste do título da hero
 
 O título passou a ser “Clínica Comportamental em Mogi Guaçu”, com quebra fixa entre “Clínica Comportamental” e “em Mogi Guaçu”. As duas linhas aparecem em sequência ao abrir a página, com movimento suave, transparência e desfoque. Com a preferência de movimento reduzido, a entrada usa apenas transparência, sem deslocamento ou desfoque. A animação não reinicia a cada troca de foto. A fonte foi ajustada no celular para manter as duas linhas.
+
+## Fotos e vídeo da hero — 2 de outubro de 2026
+
+As quatro imagens anteriores da apresentação foram substituídas pelas três fotografias e pelo vídeo enviados pela clínica. A sequência mostra a fachada, a entrada, o acesso com jardim e a sala de integração sensorial em vídeo, com troca automática a cada 3 segundos. Os arquivos originais foram preservados, totalizando menos de 1 MB.
+
+O vídeo reproduz automaticamente, sem som, sem controles e dentro da página no celular. A reprodução começa do início quando ele entra em destaque e pausa ao sair ou quando a aba fica oculta. O enquadramento preenche a hero em telas de celular e computador, preservando o título em duas linhas e o botão de agendamento.
