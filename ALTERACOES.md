@@ -76,3 +76,7 @@ Esta apresentação usa um novo repositório e um projeto separado na Vercel. O 
 - Especialidades com explicações naturais que incorporam termos reais de busca, mantendo a interação compacta no celular.
 - Conteúdo pré-renderizado em HTML, com hidratação para preservar carrossel, menu, expansão das especialidades, modais e animações ao scroll.
 - SEO e configurações do Google Ads documentados em [SEO.md](SEO.md), considerando as conversas anteriores. Apresentação sem indexação e sem disparo de conversões.
+
+## Ajuste do título da hero
+
+O título passou a ser “Clínica Comportamental em Mogi Guaçu”, com quebra fixa entre “Clínica Comportamental” e “em Mogi Guaçu”. As duas linhas aparecem em sequência ao abrir a página, com movimento suave, transparência e desfoque. Com a preferência de movimento reduzido, a entrada usa apenas transparência, sem deslocamento ou desfoque. A animação não reinicia a cada troca de foto. A fonte foi ajustada no celular para manter as duas linhas.
