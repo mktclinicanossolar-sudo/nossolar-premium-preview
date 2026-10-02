@@ -1,36 +1,41 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { WhatsAppLink } from "./ui";
 
 export const HERO_SLIDES = [
   {
-    src: "/hero/brincar-e-conectar.webp",
-    title: "Brincadeira com blocos",
-    alt: "Imagem ilustrativa de uma criança de costas brincando com blocos e segurando a mão de um adulto, sem rostos visíveis.",
-    position: "60% 42%",
+    type: "image",
+    src: "/hero/fachada-nosso-lar.jpg",
+    title: "Fachada da Clínica Nosso Lar",
+    alt: "Fachada da Clínica Nosso Lar em Mogi Guaçu, com o nome da clínica na entrada.",
+    position: "center 56%",
   },
   {
-    src: "/hero/maos-e-descobertas.webp",
-    title: "Brincadeira com argolas",
-    alt: "Imagem ilustrativa de uma criança de costas brincando com argolas coloridas e de mãos dadas com um adulto, sem rostos visíveis.",
-    position: "57% 42%",
+    type: "image",
+    src: "/hero/entrada-da-clinica.jpg",
+    title: "Entrada da clínica",
+    alt: "Entrada da Clínica Nosso Lar, com porta de madeira, varanda e revestimento de pedra.",
+    position: "center 62%",
   },
   {
-    src: "/hero/espaco-sensorial.webp",
-    title: "Sala de integração sensorial",
-    alt: "Sala real de integração sensorial da Clínica Nosso Lar com balanços e equipamentos terapêuticos.",
+    type: "image",
+    src: "/hero/acesso-nosso-lar.jpg",
+    title: "Acesso à Nosso Lar",
+    alt: "Acesso à Clínica Nosso Lar, com jardim, árvores e placa de identificação na fachada.",
+    position: "center 54%",
+  },
+  {
+    type: "video",
+    src: "/hero/nosso-lar-em-video.mp4",
+    title: "Sala de integração sensorial em vídeo",
+    alt: "Vídeo da sala de integração sensorial da Clínica Nosso Lar, com balanços e equipamentos terapêuticos.",
     position: "center 55%",
-  },
-  {
-    src: "/hero/recepcao.webp",
-    title: "Recepção da clínica",
-    alt: "Recepção real da Clínica Nosso Lar, preparada para acolher as famílias.",
-    position: "center 60%",
   },
 ];
 
 export function HeroSection() {
   const [active, setActive] = useState(0);
   const [hidden, setHidden] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
   useEffect(() => {
     const visibility = () => setHidden(document.hidden);
     visibility();
@@ -44,6 +49,20 @@ export function HeroSection() {
       3000,
     );
     return () => window.clearTimeout(timer);
+  }, [active, hidden]);
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (HERO_SLIDES[active].type === "video" && !hidden) {
+      video.currentTime = 0;
+      video.muted = true;
+      void video.play().catch(() => {
+        // A browser that blocks autoplay can still display the first frame.
+      });
+    } else {
+      video.pause();
+    }
+    return () => video.pause();
   }, [active, hidden]);
   return (
     <>
@@ -63,13 +82,27 @@ export function HeroSection() {
               className={`hero-slide ${active === index ? "is-active" : ""}`}
               aria-hidden={active !== index}
             >
-              <img
-                src={slide.src}
-                alt={slide.alt}
-                fetchPriority={index === 0 ? "high" : "low"}
-                decoding="async"
-                style={{ objectPosition: slide.position }}
-              />
+              {slide.type === "video" ? (
+                <video
+                  ref={videoRef}
+                  src={slide.src}
+                  aria-label={slide.alt}
+                  autoPlay={active === index && !hidden}
+                  muted
+                  loop
+                  playsInline
+                  preload="auto"
+                  style={{ objectPosition: slide.position }}
+                />
+              ) : (
+                <img
+                  src={slide.src}
+                  alt={slide.alt}
+                  fetchPriority={index === 0 ? "high" : "low"}
+                  decoding="async"
+                  style={{ objectPosition: slide.position }}
+                />
+              )}
             </div>
           ))}
         </div>
@@ -88,13 +121,13 @@ export function HeroSection() {
         <div className="hero-bottom">
           <div
             className="hero-pagination"
-            aria-label="Escolher imagem da apresentação"
+            aria-label="Escolher foto ou vídeo da apresentação"
           >
             {HERO_SLIDES.map((slide, index) => (
               <button
                 key={slide.src}
                 className={`hero-dot ${active === index ? "is-active" : ""}`}
-                aria-label={`Mostrar imagem ${index + 1}: ${slide.title}`}
+                aria-label={`Mostrar ${slide.type === "video" ? "vídeo" : "foto"} ${index + 1}: ${slide.title}`}
                 aria-pressed={active === index}
                 onClick={() => setActive(index)}
               >
