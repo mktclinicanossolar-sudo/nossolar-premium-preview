@@ -21,7 +21,7 @@ O azul original da marca, o amarelo, o verde e o coral foram mantidos como acent
 - Galeria em bento com as seis fotos originais, sem títulos e legendas sobre as imagens, filtros, ampliação e navegação entre fotos. O tour original `xtrijgAE51U` foi mantido, com ícone de reprodução.
 - Dez avaliações e dez perguntas frequentes recuperadas do site publicado, além das duas unidades, telefones, horários e oportunidades profissionais do projeto.
 - A galeria original tinha três associações entre fotos e legendas trocadas. Elas foram corrigidas após inspeção das imagens.
-- O FAQ publicado chamava a segunda unidade de Jardim Planalto Verde, enquanto a seção principal de contato a chamava de Parque Itacolomi. A nova versão usa a informação da seção principal de contato nas duas áreas; os números e nomes das ruas foram mantidos.
+- O site original apresentava nomes de bairro diferentes para a segunda unidade. Na revisão, o novo link de Maps fornecido pelo usuário confirmou Jardim Planalto Verde, Rua Conselheiro João Amélio de Oliveira, 290. Esse endereço foi aplicado ao contato, à FAQ e aos dados estruturados.
 
 ## Imagens da hero
 

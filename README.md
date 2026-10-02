@@ -2,6 +2,8 @@
 
 Nova versão responsiva da página da clínica, em React, TypeScript e Vite. Os conteúdos da história, os vídeos, as fotos da clínica, os contatos e as oportunidades profissionais foram preservados.
 
+[Abrir a apresentação publicada](https://nossolar-premium-preview.vercel.app/) · [Detalhes da publicação](PUBLICACAO.md)
+
 ## Executar
 
 Instale o Node.js e, dentro desta pasta, execute:
