@@ -75,8 +75,9 @@ export function HeroSection() {
         </div>
         <div className="hero-shade" />
         <div className="hero-content">
-          <h1>
-            Cuidado em autismo <span>para a sua família</span>
+          <h1 className="hero-title">
+            <span className="hero-title-line">Clínica Comportamental</span>{" "}
+            <span className="hero-title-line">em Mogi Guaçu</span>
           </h1>
           <div className="hero-actions">
             <WhatsAppLink message="Olá! Gostaria de agendar uma avaliação na Clínica Nosso Lar.">
