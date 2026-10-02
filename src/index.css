@@ -350,7 +350,7 @@ h2 {
   display: none;
 }
 
-/* Four photographs crossfade every three seconds; the words stay still. */
+/* Three photos and one video crossfade every three seconds. */
 .hero {
   position: relative;
   isolation: isolate;
@@ -370,6 +370,7 @@ h2 {
 .hero-slides,
 .hero-slide,
 .hero-slide img,
+.hero-slide video,
 .hero-shade {
   position: absolute;
   inset: 0;
@@ -386,7 +387,8 @@ h2 {
 .hero-slide.is-active {
   opacity: 1;
 }
-.hero-slide img {
+.hero-slide img,
+.hero-slide video {
   object-fit: cover;
 }
 .hero-shade {
